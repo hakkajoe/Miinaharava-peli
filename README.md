@@ -5,4 +5,4 @@
 
 [komentorivi.txt](https://github.com/hakkajoe/ot-harjoitusty-/blob/main/laskarit/viikko1/komentorivi.txt)
 
-tehtävä 16 muutos
+tehtävä 17 muutos
