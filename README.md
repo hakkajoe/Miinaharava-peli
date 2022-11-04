@@ -4,3 +4,5 @@
 [gitlog.txt](https://github.com/hakkajoe/ot-harjoitusty-/blob/main/laskarit/viikko1/gitlog.txt)
 
 [komentorivi.txt](https://github.com/hakkajoe/ot-harjoitusty-/blob/main/laskarit/viikko1/komentorivi.txt)
+
+tehtävä 16 muutos
