@@ -1,0 +1,113 @@
+commit 1a036c81cbdf5875a374ecd29ad152f994d80247
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 21:30:03 2022 +0200
+
+    tehtävä12
+
+ tiedostoja/file22 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit bb858bca266dfe97843e46af4efc51df1a733ef9
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 21:10:51 2022 +0200
+
+    tiedostot
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 671ef3d9e657077ad11584367836d6673e805e12
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 20:58:50 2022 +0200
+
+    tehtävä9
+
+ eka.txt      |  2 ++
+ kolmas.txt   |  2 ++
+ tiedosto.txt | 23 -----------------------
+ 3 files changed, 4 insertions(+), 23 deletions(-)
+
+commit 4315457a2410d3c3728b42a90b9cfa85a8fdec6f
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 20:55:34 2022 +0200
+
+    uusnimi
+
+ eka.txt | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+commit 13f79c719c8b0de2e3aaa471d41985ccd8fb7503
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 20:53:59 2022 +0200
+
+    poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit a0f8dad90e1c5c2f4bbee96d8ecb5fb3ae60f9ba
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 18:42:04 2022 +0200
+
+    ja taas lisää tekstiä
+
+ tiedosto.txt | 17 +++++++++++++----
+ 1 file changed, 13 insertions(+), 4 deletions(-)
+
+commit 53b0f9cbb34008010e21d7bbd660a7a30fab7bf7
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 18:40:28 2022 +0200
+
+    paljon tekstiä
+
+ tiedosto.txt | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+commit 4256d5a74396860e7e87640739ba7eddf8ff7b4b
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 18:09:14 2022 +0200
+
+    hakemisto
+
+ stuff/jotain.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 16db9353db4e4f0b0a80982129d795fa78c63fbc
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 18:08:08 2022 +0200
+
+    taas muutoksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 3cbf76307efe7c818d37947306ee407c150e4a53
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 18:06:40 2022 +0200
+
+    kolmas commit
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 3d3f489e51aaeef6287cbce523bba1308f73d92e
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 18:02:27 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 9bab99f4b49e07f6476ebf3603d384db0f83fc61
+Author: hakkajoe <joelhakkarainen95@gmail.com>
+Date:   Thu Nov 3 17:55:59 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
