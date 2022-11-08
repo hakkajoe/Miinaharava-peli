@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Sovelluksen avulla pystyy pelaamaan miinaharava -peliä eri vaikeusasteilla, luomaan käyttäjätunnuksen ja tarkkastelemaan parhaat tulokset listauksia. 
+Sovelluksen avulla pystyy pelaamaan miinaharava -peliä eri vaikeusasteilla, luomaan käyttäjätunnuksen sekä tarkastelemaan parhaat tulokset -listaa. 
 
 ## Käyttöliittymäluonnos
 
