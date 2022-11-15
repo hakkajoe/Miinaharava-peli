@@ -5,4 +5,6 @@
 
 [komentorivi.txt](https://github.com/hakkajoe/ot-harjoitusty-/blob/main/laskarit/viikko1/komentorivi.txt)
 
-tehtävä 17 muutos
+[vaatimusmaarittely.md](https://github.com/hakkajoe/ot-harjoitusty-/blob/main/dokumentaatio/vaatimusmaarittely.md)
+
+[tyoaikakirjanpito.md](https://github.com/hakkajoe/ot-harjoitusty-/blob/main/dokumentaatio/tyoaikakirjanpito.md)
