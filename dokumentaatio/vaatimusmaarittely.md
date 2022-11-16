@@ -8,7 +8,7 @@ Sovelluksen avulla pystyy pelaamaan miinaharava -peliä eri vaikeusasteilla, luo
 
 Sovellus koostuu neljästä eri päänäkymästä
 
-Sovellus aukeaa kirjautumisnäkymään, jossa on mahdollista rekisteröityä käyttäjäksi tai kirjautua jo aiemmin luodulla tunnuksella. Tämän jälkeen 
+Sovellus aukeaa kirjautumisnäkymään, jossa on mahdollista rekisteröityä käyttäjäksi, kirjautua jo aiemmin luodulla tunnuksella tai sulkea sovellus erillisestä lopetusnapista. Tämän jälkeen 
 sovellus avautuu näkymään josta on valittavissa kolmen eri vaikeusasteen peliä, avata parhaat tulokset -sivu, kirjautua ulos, ja sulkea sovellus
 
 ## Perusversion tarjoama toiminnallisuus
@@ -20,6 +20,7 @@ sovellus avautuu näkymään josta on valittavissa kolmen eri vaikeusasteen peli
 - Käyttäjä voi kirjautua järjestelmään
   - Kirjautuminen onnistuu syötettäessä olemassaoleva käyttäjätunnus ja salasana kirjautumislomakkeelle
   - Jos käyttäjää ei olemassa, tai salasana ei täsmää, ilmoittaa järjestelmä tästä
+- Käyttäjä voi sulkea sovelluksen erillisestä sovelluksen napista.
 
 ### Kirjautumisen jälkeen
 

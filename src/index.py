@@ -1,16 +1,14 @@
 from tkinter import Tk
 from ui.ui import UI
 
-
 def main():
     window = Tk()
-    window.title("Miinaharava")
+    window.title("Minesweeper")
 
-    ui_view = UI(window)
-    ui_view.start()
+    ui = UI(window)
+    ui.start()
 
     window.mainloop()
-
 
 if __name__ == "__main__":
     main()
