@@ -1,24 +1,41 @@
 from tkinter import ttk, constants
+from services.login_service import login_service
 
 class MainmenuView:
-    def __init__(self, root):
+    def __init__(self, root, handle_show_createuser_view):
 
         self._root = root
         self._frame = None
+        self._handle_show_createuser_view = handle_show_createuser_view
+        self._user = login_service.get_current_user()
 
         self._start()
+
+    def pack(self):
+        self._frame.pack(fill=constants.X)
+
+    def destroy(self):
+        self._frame.destroy()
 
     def _start(self):
         self._frame = ttk.Frame(master=self._root)
 
+        name = self._user.username
+        self.welcome_label = ttk.Label(master=self._frame, text="Welcome, " + str(name))
+
         self.button1 = ttk.Button(master=self._frame, text="Play")
         self.button2 = ttk.Button(master=self._frame, text="High scores")
-        self.button3 = ttk.Button(master=self._frame, text="Quit", command=self._root.destroy)
+        self.button3 = ttk.Button(master=self._frame, text="Change user")
+        self.button4 = ttk.Button(master=self._frame, text="Quit", command=self._root.destroy)
 
-        self.button1.grid(row=5, column=1, pady=50)
+        self.welcome_label.grid(row=1, column=1, pady=10)
 
-        self.button2.grid(row=6, column=1, pady=50)
+        self._frame.grid_columnconfigure(1, weight=1, minsize=500)
 
-        self.button3.grid(row=7, column=1, pady=50)
+        self.button1.grid(row=3, column=1, pady=50)
 
-        self._root.grid_columnconfigure(1, weight=1, minsize=300)
+        self.button2.grid(row=4, column=1, pady=50)
+
+        self.button3.grid(row=5, column=1, pady=50)
+
+        self.button4.grid(row=6, column=1, pady=75)

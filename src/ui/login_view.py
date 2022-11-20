@@ -1,4 +1,4 @@
-from tkinter import Tk, ttk, StringVar, constants
+from tkinter import ttk, StringVar, constants
 from services.login_service import login_service, InvalidCredentialsError
 
 class LoginView:
@@ -28,7 +28,7 @@ class LoginView:
             login_service.login(username, password)
             self._handle_login()
         except InvalidCredentialsError:
-            self._show_error("Invalid username or password")
+            self._show_error("! Invalid username or password !")
 
     def _show_error(self, message):
         self._error_variable.set(message)
@@ -42,12 +42,9 @@ class LoginView:
 
         self._error_variable = StringVar(self._frame)
 
-        self._error_label = ttk.Label(
-            master=self._frame,
-            textvariable=self._error_variable,
-        )
+        self._error_label = ttk.Label(master=self._frame, textvariable=self._error_variable)
 
-        self._error_label.grid()
+        self._error_label.grid(column=1, padx=5, pady=5)
 
         self.username_label = ttk.Label(master=self._frame, text="Username")
         self._username_entry = ttk.Entry(master=self._frame)
@@ -64,12 +61,12 @@ class LoginView:
         self.password_label.grid(row=3, column=1, pady=10)
         self._password_entry.grid(row=4, column=1)
 
+        self._frame.grid_columnconfigure(1, weight=1, minsize=300)
+
         self.button1.grid(row=5, column=1, pady=10)
 
         self.button2.grid(row=6, column=1, pady=10)
 
         self.button3.grid(row=7, column=1, pady=10)
-
-        self._root.grid_columnconfigure(1, weight=1, minsize=300)
 
         self._hide_error()
