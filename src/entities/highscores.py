@@ -1,7 +1,5 @@
-import uuid
-
-class Highscores:
-    def __init__(self, score, player, date):
+class Highscore:
+    def __init__(self, score, username, date):
         self.score = score
-        self.player = player
+        self.username = username
         self.date = date

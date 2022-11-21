@@ -2,10 +2,10 @@ from tkinter import ttk, StringVar, constants
 from services.login_service import login_service, InvalidCredentialsError
 
 class LoginView:
-    def __init__(self, root, handle_login, handle_show_createuser_view):
+    def __init__(self, root, handle_login, show_createuser_view):
         self._root = root
         self._handle_login = handle_login
-        self._handle_show_createuser_view = handle_show_createuser_view
+        self._show_createuser_view = show_createuser_view
         self._frame = None
         self._username_entry = None
         self._password_entry = None
@@ -52,7 +52,7 @@ class LoginView:
         self.password_label = ttk.Label(master=self._frame, text="Password")
         self._password_entry = ttk.Entry(master=self._frame)
         self.button1 = ttk.Button(master=self._frame, text="Log in", command=self._login_handler)
-        self.button2 = ttk.Button(master=self._frame, text="Create user", command=self._handle_show_createuser_view)
+        self.button2 = ttk.Button(master=self._frame, text="Create user", command=self._show_createuser_view)
         self.button3 = ttk.Button(master=self._frame, text="Quit", command=self._root.destroy)
 
         self.username_label.grid(row=1, column=1, pady=10)
@@ -61,7 +61,7 @@ class LoginView:
         self.password_label.grid(row=3, column=1, pady=10)
         self._password_entry.grid(row=4, column=1)
 
-        self._frame.grid_columnconfigure(1, weight=1, minsize=300)
+        self._frame.grid_columnconfigure(1, weight=1, minsize=700)
 
         self.button1.grid(row=5, column=1, pady=10)
 

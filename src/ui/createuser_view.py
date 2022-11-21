@@ -4,11 +4,11 @@ from services.login_service import login_service, UsernameExistsError
 
 class CreateuserView:
 
-    def __init__(self, root, handle_create_user, handle_show_login_view):
+    def __init__(self, root, handle_create_user, show_login_view):
 
         self._root = root
         self._handle_create_user = handle_create_user
-        self._handle_show_login_view = handle_show_login_view
+        self._show_login_view = show_login_view
         self._frame = None
         self._username_entry = None
         self._password_entry = None
@@ -67,11 +67,11 @@ class CreateuserView:
 
         create_user_button = ttk.Button(master=self._frame, text="Create user", command=self._create_user_handler)
 
-        login_button = ttk.Button(master=self._frame, text="Return", command=self._handle_show_login_view)
+        return_button = ttk.Button(master=self._frame, text="Return", command=self._show_login_view)
 
-        self._frame.grid_columnconfigure(0, weight=1, minsize=300)
+        self._frame.grid_columnconfigure(0, weight=1, minsize=700)
 
         create_user_button.grid(row=5, padx=5, pady=5)
-        login_button.grid(row=6, padx=5, pady=5)
+        return_button.grid(row=6, padx=5, pady=5)
 
         self._hide_error()

@@ -9,6 +9,10 @@ def drop_tables(connection):
         drop table if exists users;
     """)
 
+    cursor.execute("""
+        drop table if exists scores;
+    """)
+
     connection.commit()
 
 
@@ -20,6 +24,14 @@ def create_tables(connection):
         create table users (
             username text primary key,
             password text
+        );
+    """)
+
+    cursor.execute("""
+        create table scores (
+            score int primary key,
+            username text,
+            date text
         );
     """)
 
