@@ -49,4 +49,4 @@ class HighscoresView:
         self._frame.grid_columnconfigure(1, weight=2, minsize=250)
         self._frame.grid_columnconfigure(2, weight=2, minsize=250)
 
-        self.button.grid(row=12, column=1, pady=50)
+        self.button.grid(row=13, column=1, pady=50)

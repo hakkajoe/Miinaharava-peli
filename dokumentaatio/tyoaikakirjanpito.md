@@ -7,3 +7,4 @@
 |20.11.|5t|Lisäsin ikkunan uuden käyttäjän luomiselle ja varmistin että siirtymä kaikkien toistaiseksi luotujen ikkunoiden välillä toimii ongelmitta.|
 |21.11.|6t|Lisäsin tietokannan parhaille tuloksille ja varmistin että tiedot siirtyvät oikein eri ikkunoiden välillä. Seuraava vaihe on itse pelin luominen.|
 |22.11.|6t|Aloin työstämään itse miinaharava-peliä Sokoban-esimerkkipelin sekä löytämäni miinaharavan ohjelmointitutoriaalin avulla.|
+|23.11.|4t|Viimeistelin pelin toiminnallisuuden perusteet, sekä integroin osittain siirtymän tkinter-valikoiden ja pygame-ikkunan välillä.|
