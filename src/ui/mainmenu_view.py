@@ -2,12 +2,12 @@ from tkinter import ttk, constants
 from services.login_service import login_service
 
 class MainmenuView:
-    def __init__(self, root, show_login_view, show_highscore_view, show_play_view):
+    def __init__(self, root, show_login_view, show_highscore_view_easy, show_play_view):
 
         self._root = root
         self._frame = None
         self._show_login_view = show_login_view
-        self._show_highscore_view = show_highscore_view
+        self._show_highscore_view_easy = show_highscore_view_easy
         self._show_play_view = show_play_view
         self._user = login_service.get_current_user()
 
@@ -26,7 +26,7 @@ class MainmenuView:
         self.welcome_label = ttk.Label(master=self._frame, text="Welcome, " + str(name))
 
         self.button1 = ttk.Button(master=self._frame, text="Play", command=self._show_play_view)
-        self.button2 = ttk.Button(master=self._frame, text="High scores", command=self._show_highscore_view)
+        self.button2 = ttk.Button(master=self._frame, text="High scores", command=self._show_highscore_view_easy)
         self.button3 = ttk.Button(master=self._frame, text="Change user", command=self._show_login_view)
         self.button4 = ttk.Button(master=self._frame, text="Quit", command=self._root.destroy)
 

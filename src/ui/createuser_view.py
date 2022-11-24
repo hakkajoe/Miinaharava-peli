@@ -49,29 +49,27 @@ class CreateuserView:
 
         self._error_variable = StringVar(self._frame)
 
-        self._error_label = ttk.Label(
-            master=self._frame,
-            textvariable=self._error_variable)
+        self._error_label = ttk.Label(master=self._frame, textvariable=self._error_variable)
 
-        self._error_label.grid(column=1, padx=5, pady=5)
+        self._error_label.grid(column=1, pady=10)
 
         username_label = ttk.Label(master=self._frame, text="Username")
         self._username_entry = ttk.Entry(master=self._frame)
-        username_label.grid(row=1, padx=5, pady=5)
-        self._username_entry.grid(row=2, padx=5, pady=5)
+        username_label.grid(column=1, row=1, pady=10)
+        self._username_entry.grid(column=1, row=2, pady=10)
 
         password_label = ttk.Label(master=self._frame, text="Password")
         self._password_entry = ttk.Entry(master=self._frame)
-        password_label.grid(row=3, padx=5, pady=5)
-        self._password_entry.grid(row=4, padx=5, pady=5)
+        password_label.grid(column=1, row=3, pady=10)
+        self._password_entry.grid(column=1, row=4, pady=10)
 
         create_user_button = ttk.Button(master=self._frame, text="Create user", command=self._create_user_handler)
 
         return_button = ttk.Button(master=self._frame, text="Return", command=self._show_login_view)
 
-        self._frame.grid_columnconfigure(0, weight=1, minsize=700)
+        self._frame.grid_columnconfigure(1, weight=1, minsize=700)
 
-        create_user_button.grid(row=5, padx=5, pady=5)
-        return_button.grid(row=6, padx=5, pady=5)
+        create_user_button.grid(column=1, row=5, pady=10)
+        return_button.grid(column=1, row=6, pady=10)
 
         self._hide_error()

@@ -8,3 +8,4 @@
 |21.11.|6t|Lisäsin tietokannan parhaille tuloksille ja varmistin että tiedot siirtyvät oikein eri ikkunoiden välillä. Seuraava vaihe on itse pelin luominen.|
 |22.11.|6t|Aloin työstämään itse miinaharava-peliä Sokoban-esimerkkipelin sekä löytämäni miinaharavan ohjelmointitutoriaalin avulla.|
 |23.11.|4t|Viimeistelin pelin toiminnallisuuden perusteet, sekä integroin osittain siirtymän tkinter-valikoiden ja pygame-ikkunan välillä.|
+|24.11.|2t|Loin sivut eri vaikeusasteiden parhaille tuloksille ja muokkasin parhaiden tulosten tietokantaa. Aloitin myös loppunäkymän suunnittelun.|

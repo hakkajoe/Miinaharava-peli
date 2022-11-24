@@ -31,7 +31,8 @@ def create_tables(connection):
         create table scores (
             score int primary key,
             username text,
-            date text
+            date text,
+            diff text
         );
     """)
 

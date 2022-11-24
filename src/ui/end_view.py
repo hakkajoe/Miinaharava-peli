@@ -5,7 +5,7 @@ from datetime import datetime
 from game.game import Game
 from game.board import Board
 
-class PlayView:
+class EndView:
     def __init__(self, root, show_mainmenu_view):
         self._root = root
         self._show_mainmenu_view = show_mainmenu_view
@@ -28,33 +28,6 @@ class PlayView:
         diff = "easy"
 
         score_service.create_score(score, username, date, diff)
-
-    def _initiate_easy(self):
-        self._size = (10,10)
-        self._screensize = (300,300)
-        self._prob = 0.1
-        self._bombs = 10
-        self._board = Board(self._size, self._prob)
-        self._game = Game(self._board, self._screensize)
-        self._game.run()
-
-    def _initiate_medium(self):
-        self._size = (18,18)
-        self._screensize = (540,540)
-        self._prob = 0.1
-        self._bombs = 43
-        self._board = Board(self._size, self._prob)
-        self._game = Game(self._board, self._screensize)
-        self._game.run()
-
-    def _initiate_hard(self):
-        self._size = (24,24)
-        self._screensize = (720,720)
-        self._prob = 0.1
-        self._bombs = 120
-        self._board = Board(self._size, self._prob)
-        self._game = Game(self._board, self._screensize)
-        self._game.run()
 
     def _start(self):
         self._frame = ttk.Frame(master=self._root)

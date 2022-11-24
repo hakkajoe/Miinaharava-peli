@@ -11,11 +11,17 @@ class ScoreService:
         self._score = None
         self._score_repository = score_repository
 
-    def get_scores(self):
-        return self._score_repository.find_all()
+    def get_scores_easy(self):
+        return self._score_repository.find_all_easy()
 
-    def create_score(self, username, score, date):
+    def get_scores_medium(self):
+        return self._score_repository.find_all_medium()
 
-        self._score_repository.create(Highscore(username, score, date))
+    def get_scores_hard(self):
+        return self._score_repository.find_all_hard()
+
+    def create_score(self, username, score, date, diff):
+
+        self._score_repository.create(Highscore(username, score, date, diff))
 
 score_service = ScoreService()
