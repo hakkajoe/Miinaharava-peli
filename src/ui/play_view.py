@@ -5,6 +5,7 @@ from datetime import datetime
 from game.game import Game
 from game.board import Board
 
+
 class PlayView:
     def __init__(self, root, show_mainmenu_view):
         self._root = root
@@ -30,8 +31,8 @@ class PlayView:
         score_service.create_score(score, username, date, diff)
 
     def _initiate_easy(self):
-        self._size = (10,10)
-        self._screensize = (300,300)
+        self._size = (10, 10)
+        self._screensize = (300, 300)
         self._prob = 0.1
         self._bombs = 10
         self._board = Board(self._size, self._prob)
@@ -39,8 +40,8 @@ class PlayView:
         self._game.run()
 
     def _initiate_medium(self):
-        self._size = (18,18)
-        self._screensize = (540,540)
+        self._size = (18, 18)
+        self._screensize = (540, 540)
         self._prob = 0.1
         self._bombs = 43
         self._board = Board(self._size, self._prob)
@@ -48,8 +49,8 @@ class PlayView:
         self._game.run()
 
     def _initiate_hard(self):
-        self._size = (24,24)
-        self._screensize = (720,720)
+        self._size = (24, 24)
+        self._screensize = (720, 720)
         self._prob = 0.1
         self._bombs = 120
         self._board = Board(self._size, self._prob)
@@ -62,13 +63,18 @@ class PlayView:
         self.test_label = ttk.Label(master=self._frame, text="Test score")
         self._test_entry = ttk.Entry(master=self._frame)
 
-        self.button4 = ttk.Button(master=self._frame, text="Submit", command=self._score_handler)
+        self.button4 = ttk.Button(
+            master=self._frame, text="Submit", command=self._score_handler)
 
-        self.button5 = ttk.Button(master=self._frame, text="Main menu", command=self._show_mainmenu_view)
+        self.button5 = ttk.Button(
+            master=self._frame, text="Main menu", command=self._show_mainmenu_view)
 
-        self.button1 = ttk.Button(master=self._frame, text="Easy", command=self._initiate_easy)
-        self.button2 = ttk.Button(master=self._frame, text="Medium", command=self._initiate_medium)
-        self.button3 = ttk.Button(master=self._frame, text="Hard", command=self._initiate_hard)
+        self.button1 = ttk.Button(
+            master=self._frame, text="Easy", command=self._initiate_easy)
+        self.button2 = ttk.Button(
+            master=self._frame, text="Medium", command=self._initiate_medium)
+        self.button3 = ttk.Button(
+            master=self._frame, text="Hard", command=self._initiate_hard)
 
         self.test_label.grid(row=1, column=1, pady=10)
         self._test_entry.grid(row=2, column=1)

@@ -9,3 +9,4 @@
 |22.11.|6t|Aloin työstämään itse miinaharava-peliä Sokoban-esimerkkipelin sekä löytämäni miinaharavan ohjelmointitutoriaalin avulla.|
 |23.11.|4t|Viimeistelin pelin toiminnallisuuden perusteet, sekä integroin osittain siirtymän tkinter-valikoiden ja pygame-ikkunan välillä.|
 |24.11.|2t|Loin sivut eri vaikeusasteiden parhaille tuloksille ja muokkasin parhaiden tulosten tietokantaa. Aloitin myös loppunäkymän suunnittelun.|
+|28.11.|2t|Varmistettu että viikon 4 vaatimukset on täytetty (laajennettu testausta, luotu pylint, luotu pakkauskaavio).|

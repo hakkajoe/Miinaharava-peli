@@ -1,5 +1,6 @@
-from game.piece import Piece
 from random import random
+from game.piece import Piece
+
 
 class Board:
     def __init__(self, size, prob):
@@ -17,7 +18,7 @@ class Board:
             row = []
             for col in range(self._size[1]):
                 HasBomb = random() < self._prob
-                if (not HasBomb):
+                if not HasBomb:
                     self._NumNonBombs += 1
                 piece = Piece(HasBomb)
                 row.append(piece)
@@ -43,26 +44,26 @@ class Board:
             for col in range(index[1] - 1, index[1] + 2):
                 OutOfBounds = row < 0 or row >= self._size[0] or col < 0 or col >= self._size[1]
                 same = row == index[0] and col == index[1]
-                if (same or OutOfBounds):
+                if same or OutOfBounds:
                     continue
                 neighbors.append(self._GetPiece((row, col)))
         return neighbors
 
     def HandleClick_board(self, piece, flag):
-        if (piece.GetClicked() or (not flag and piece.GetFlagged())):
+        if piece.GetClicked() or not flag and piece.GetFlagged():
             return
-        if (flag):
+        if flag:
             piece.ToggleFlag()
             return
         piece.click()
-        if (piece.GetHasBomb()):
+        if piece.GetHasBomb():
             self._lost = True
             return
         self._NumClicked += 1
-        if (piece.GetNumAround() != 0):
+        if piece.GetNumAround() != 0:
             return
         for neighbor in piece.GetNeighbors():
-            if (not neighbor.GetHasBomb() and not neighbor.GetClicked()):
+            if not neighbor.GetHasBomb() and not neighbor.GetClicked():
                 self.HandleClick_board(neighbor, False)
 
     def GetLost(self):

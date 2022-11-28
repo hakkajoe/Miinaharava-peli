@@ -20,7 +20,7 @@ class Piece():
     def SetNumAround(self):
         self._NumAround = 0
         for piece in self._neighbors:
-            if (piece.GetHasBomb()):
+            if piece.GetHasBomb():
                 self._NumAround += 1
 
     def GetNumAround(self):

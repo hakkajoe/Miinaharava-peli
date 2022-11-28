@@ -49,7 +49,8 @@ class CreateuserView:
 
         self._error_variable = StringVar(self._frame)
 
-        self._error_label = ttk.Label(master=self._frame, textvariable=self._error_variable)
+        self._error_label = ttk.Label(
+            master=self._frame, textvariable=self._error_variable)
 
         self._error_label.grid(column=1, pady=10)
 
@@ -63,9 +64,11 @@ class CreateuserView:
         password_label.grid(column=1, row=3, pady=10)
         self._password_entry.grid(column=1, row=4, pady=10)
 
-        create_user_button = ttk.Button(master=self._frame, text="Create user", command=self._create_user_handler)
+        create_user_button = ttk.Button(
+            master=self._frame, text="Create user", command=self._create_user_handler)
 
-        return_button = ttk.Button(master=self._frame, text="Return", command=self._show_login_view)
+        return_button = ttk.Button(
+            master=self._frame, text="Return", command=self._show_login_view)
 
         self._frame.grid_columnconfigure(1, weight=1, minsize=700)
 
