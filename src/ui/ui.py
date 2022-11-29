@@ -73,7 +73,8 @@ class UI:
     def _show_play_view(self):
         self._hide_current_view()
 
-        self._current_view = PlayView(self._root, self._show_mainmenu_view)
+        self._current_view = PlayView(
+                self._root, self._show_mainmenu_view, self._show_end_view)
 
         self._current_view.pack()
 

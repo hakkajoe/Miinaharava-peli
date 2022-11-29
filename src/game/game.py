@@ -1,8 +1,10 @@
 import pygame
 import os
+from time import sleep, time
+
 from game.piece import Piece
 from game.board import Board
-from time import sleep
+from services.game_service import game_service
 
 
 class Game():
@@ -14,12 +16,17 @@ class Game():
         self._load_images()
 
     def run(self):
+        pygame.display.set_caption('Minesweeper')
         pygame.init()
+        start_time = time()
         self._screen = pygame.display.set_mode(self._screensize)
         running = True
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    score = 0
+                    status = "lost"
+                    game_service.update_game_data2(score, status)
                     running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     position = pygame.mouse.get_pos()
@@ -28,9 +35,16 @@ class Game():
             self._draw()
             pygame.display.flip()
             if self._board.GetWon():
+                end_time = time()
+                score = round(end_time - start_time, 3)
+                status = "won"
+                game_service.update_game_data2(score, status)
                 sleep(3)
                 running = False
             if self._board.GetLost():
+                score = 0
+                status = "lost"
+                game_service.update_game_data2(score, status)
                 sleep(3)
                 running = False
         pygame.quit()

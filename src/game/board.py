@@ -3,9 +3,16 @@ from game.piece import Piece
 
 
 class Board:
-    def __init__(self, size, prob):
-        self._size = size
-        self._prob = prob
+    def __init__(self, diff):
+        if diff == "easy":
+            self._size = (10, 10)
+            self._prob = 0.1
+        elif diff == "medium":
+            self._size = (18, 18)
+            self._prob = 0.1
+        elif diff == "hard":
+            self._size = (24, 24)
+            self._prob = 0.1
         self._lost = False
         self._won = False
         self._NumClicked = 0
