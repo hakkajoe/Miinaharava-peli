@@ -1,4 +1,4 @@
-from random import random
+import random
 from game.piece import Piece
 
 
@@ -6,31 +6,52 @@ class Board:
     def __init__(self, diff):
         if diff == "easy":
             self._size = (10, 10)
-            self._prob = 0.1
+            self._bombs = 10
         elif diff == "medium":
-            self._size = (18, 18)
-            self._prob = 0.1
+            self._size = (17, 17)
+            self._bombs = 44
         elif diff == "hard":
             self._size = (24, 24)
-            self._prob = 0.1
+            self._bombs = 100
         self._lost = False
         self._won = False
         self._NumClicked = 0
         self._NumNonBombs = 0
+        self.SetBombs()
         self.SetBoard()
 
     def SetBoard(self):
         self._board = []
         for row in range(self._size[0]):
+            x = row
             row = []
             for col in range(self._size[1]):
-                HasBomb = random() < self._prob
-                if not HasBomb:
+                if (x + 1, col + 1) in self._bomb_coordinates:
+                    HasBomb = True
+                else:
+                    HasBomb = False
                     self._NumNonBombs += 1
                 piece = Piece(HasBomb)
                 row.append(piece)
             self._board.append(row)
         self._SetNeighbors_board()
+
+    def SetBombs(self):
+        self._bomb_coordinates = []
+        to_be_placed = self._bombs
+        while True:
+            if to_be_placed == 0:
+                break
+            for bomb in range(1, self._bombs + 1):
+                if to_be_placed == 0:
+                    break
+                x = random.randint(1, self._size[0])
+                y = random.randint(1, self._size[1])
+                if (x, y) not in self._bomb_coordinates:
+                    self._bomb_coordinates.append((x, y))
+                    to_be_placed -= 1
+                    continue
+                continue
 
     def _SetNeighbors_board(self):
         for row in range(self._size[0]):

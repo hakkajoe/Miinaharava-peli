@@ -18,6 +18,7 @@ class Game():
     def run(self):
         pygame.display.set_caption('Minesweeper')
         pygame.init()
+        self._font = pygame.font.SysFont("Arial", 20)
         start_time = time()
         self._screen = pygame.display.set_mode(self._screensize)
         running = True
@@ -26,7 +27,7 @@ class Game():
                 if event.type == pygame.QUIT:
                     score = 0
                     status = "lost"
-                    game_service.update_game_data2(score, status)
+                    game_service.register_game_data(score, status)
                     running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     position = pygame.mouse.get_pos()
@@ -35,16 +36,30 @@ class Game():
             self._draw()
             pygame.display.flip()
             if self._board.GetWon():
+                sleep(2)
                 end_time = time()
-                score = round(end_time - start_time, 3)
+                score = round(end_time - start_time, 2)
                 status = "won"
-                game_service.update_game_data2(score, status)
+                game_service.register_game_data(score, status)
+                self._wontext1 = self._font.render(("Congratulations!"), True, (0, 0, 0))
+                self._wontext2 = self._font.render((f"you beat the game in"), True, (0, 0, 0))
+                self._wontext3 = self._font.render((f"{score} seconds!"), True, (0, 0, 0))
+                self._screen.fill((255, 255, 255))
+                self._screen.blit(self._wontext1, (self._screensize[0] // 2 - 80, self._screensize[1] // 2 - 30))
+                self._screen.blit(self._wontext2, (self._screensize[0] // 2 - 100, self._screensize[1] // 2))
+                self._screen.blit(self._wontext3, (self._screensize[0] // 2 - 80, self._screensize[1] // 2 + 30))
+                pygame.display.flip()
                 sleep(3)
                 running = False
             if self._board.GetLost():
+                sleep(2)
                 score = 0
                 status = "lost"
-                game_service.update_game_data2(score, status)
+                game_service.register_game_data(score, status)
+                self._losttext = self._font.render(("Better luck next time!"), True, (0, 0, 0))
+                self._screen.fill((255, 255, 255))
+                self._screen.blit(self._losttext, (self._screensize[0] // 2 - 100, self._screensize[1] // 2))
+                pygame.display.flip()
                 sleep(3)
                 running = False
         pygame.quit()

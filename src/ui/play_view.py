@@ -1,16 +1,13 @@
 from tkinter import ttk, constants
-from services.score_service import score_service
-from services.login_service import login_service
 from services.game_service import game_service
 from game.game import Game
 from game.board import Board
 
 
 class PlayView:
-    def __init__(self, root, show_mainmenu_view, show_end_view):
+    def __init__(self, root, show_mainmenu_view):
         self._root = root
         self._show_mainmenu_view = show_mainmenu_view
-        self._show_end_view = show_end_view
         self._frame = None
         self._diff = None
 
@@ -24,7 +21,7 @@ class PlayView:
 
     def _initiate_easy(self):
         self._diff = "easy"
-        game_service.update_game_data1(self._diff)
+        game_service.update_game_data(self._diff)
         self._screensize = (300, 300)
         self._board = Board(self._diff)
         self._game = Game(self._board, self._screensize)
@@ -32,7 +29,7 @@ class PlayView:
 
     def _initiate_medium(self):
         self._diff = "medium"
-        game_service.update_game_data1(self._diff)
+        game_service.update_game_data(self._diff)
         self._screensize = (540, 540)
         self._board = Board(self._diff)
         self._game = Game(self._board, self._screensize)
@@ -40,7 +37,7 @@ class PlayView:
 
     def _initiate_hard(self):
         self._diff = "hard"
-        game_service.update_game_data1(self._diff)
+        game_service.update_game_data(self._diff)
         self._screensize = (720, 720)
         self._board = Board(self._diff)
         self._game = Game(self._board, self._screensize)
@@ -52,7 +49,7 @@ class PlayView:
     def _start(self):
         self._frame = ttk.Frame(master=self._root)
 
-        self.label = ttk.Label(master=self._frame, text="Choose game difficulty:")
+        self.label = ttk.Label(master=self._frame, text="Choose game difficulty to start a game:")
 
         self.button5 = ttk.Button(
             master=self._frame, text="Main menu", command=self._show_mainmenu_view)

@@ -1,5 +1,6 @@
 from datetime import datetime
 from services.login_service import login_service
+from services.score_service import score_service
 
 class GameService:
 
@@ -9,25 +10,19 @@ class GameService:
         self._diff = None
         self._score = None
         self._status = None
-
-    def get_game_data(self):
-        data = []
-        data.append(self._user)
-        data.append(self._date)
-        data.append(self._diff)
-        data.append(self._score)
-        data.append(self._status)
-        return data
     
-    def update_game_data1(self, diff):
+    def update_game_data(self, diff):
         user = login_service.get_current_user()
         self._user = user.username
         self._date = datetime.now().strftime('%d.%m.%Y')
         self._diff = diff
     
-    def update_game_data2(self, score, status):
+    def register_game_data(self, score, status):
         self._score = score
         self._status = status
+        if self._score > 0:
+            score_service.create_score(self._score, self._user, self._date, self._diff)
+        self.reset_data()
 
     def reset_data(self):
         self._user = None

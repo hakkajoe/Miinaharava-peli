@@ -11,3 +11,4 @@
 |24.11.|2t|Loin sivut eri vaikeusasteiden parhaille tuloksille ja muokkasin parhaiden tulosten tietokantaa. Aloitin myös loppunäkymän suunnittelun.|
 |28.11.|2t|Varmistettu että viikon 4 vaatimukset on täytetty (laajennettu testausta, luotu pylint, luotu pakkauskaavio).|
 |29.11.|5t|Loin yksittäisen pelin tietojen käsittelylle tarkoitetun tiedoston ja varmistin että tiedot siirtyvät sitä kautta oikein. Yritin myös tuloksetta luoda siirtymän pygamen ja tkinter-loppuruudun välillä. Saatan luoda samansisältöisen loppuruudun tkinterin sijasta pygameen ongelman ratkaisemiseksi.|
+|30.11.|5t|Tein uuden loppunäkymän pygamen ikkunaan ja poistin alkuperäisen tkinter-loppunäkymän. Määritin myös pommien distribuution pelin vaikeusasteen mukaan.|

@@ -5,6 +5,7 @@ from ui.ui import UI
 def main():
     window = Tk()
     window.title("Minesweeper")
+    window.geometry("+550+250")
 
     ui = UI(window)
     ui.start()

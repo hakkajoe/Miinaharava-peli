@@ -5,7 +5,6 @@ from ui.highscores_view_easy import HighscoresViewEasy
 from ui.highscores_view_medium import HighscoresViewMedium
 from ui.highscores_view_hard import HighscoresViewHard
 from ui.play_view import PlayView
-from ui.end_view import EndView
 
 
 class UI:
@@ -74,14 +73,6 @@ class UI:
         self._hide_current_view()
 
         self._current_view = PlayView(
-                self._root, self._show_mainmenu_view, self._show_end_view)
-
-        self._current_view.pack()
-
-    def _show_end_view(self):
-        self._hide_current_view()
-
-        self._current_view = EndView(
-            self._root, self._show_play_view, self._show_mainmenu_view)
+                self._root, self._show_mainmenu_view)
 
         self._current_view.pack()

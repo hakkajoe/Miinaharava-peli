@@ -30,6 +30,10 @@ class CreateuserView:
         if len(username) == 0 or len(password) == 0:
             self._show_error("Username and password is required")
             return
+        
+        if len(username) > 30:
+            self._show_error("Username too long")
+            return
 
         try:
             login_service.create_user(username, password)
