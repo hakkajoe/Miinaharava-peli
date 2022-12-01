@@ -8,8 +8,8 @@ class Board:
             self._size = (10, 10)
             self._bombs = 10
         elif diff == "medium":
-            self._size = (17, 17)
-            self._bombs = 44
+            self._size = (18, 18)
+            self._bombs = 47
         elif diff == "hard":
             self._size = (24, 24)
             self._bombs = 100
@@ -17,10 +17,22 @@ class Board:
         self._won = False
         self._NumClicked = 0
         self._NumNonBombs = 0
-        self.SetBombs()
-        self.SetBoard()
+        self.SetInitBoard()
+
+    def SetInitBoard(self):
+        self._board = []
+        for row in range(self._size[0]):
+            x = row
+            row = []
+            for col in range(self._size[1]):
+                HasBomb = False
+                self._NumNonBombs += 1
+                piece = Piece(HasBomb)
+                row.append(piece)
+            self._board.append(row)
 
     def SetBoard(self):
+        self._NumNonBombs = 0
         self._board = []
         for row in range(self._size[0]):
             x = row
@@ -36,7 +48,7 @@ class Board:
             self._board.append(row)
         self._SetNeighbors_board()
 
-    def SetBombs(self):
+    def SetBombs(self, startbox):
         self._bomb_coordinates = []
         to_be_placed = self._bombs
         while True:
@@ -47,11 +59,12 @@ class Board:
                     break
                 x = random.randint(1, self._size[0])
                 y = random.randint(1, self._size[1])
-                if (x, y) not in self._bomb_coordinates:
+                if (x, y) not in self._bomb_coordinates and (x, y) != (startbox[0] + 1, startbox[1] + 1):
                     self._bomb_coordinates.append((x, y))
                     to_be_placed -= 1
                     continue
                 continue
+        self.SetBoard()
 
     def _SetNeighbors_board(self):
         for row in range(self._size[0]):
