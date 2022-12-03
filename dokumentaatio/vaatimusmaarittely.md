@@ -29,22 +29,23 @@ uloskirjautuminen, tai sovelluksen sulkeminen. /tehty
 
 ### Pelitila
 
-- Vaikeusasteen valittuaan käyttäjälle avautuu miinaharava-pelin pelinäkymä, jossa miinojen määrä ja alueen koko määrittyvät vaikeusasteen mukaan. 
-Näkymässä on myös pelikello, sekä merkkaamattomien miinojen määrä. 
+- Vaikeusasteen valittuaan käyttäjälle avautuu miinaharava-pelin pelinäkymä, jossa miinojen määrä ja alueen koko määrittyvät vaikeusasteen mukaan. /tehty
 - Käyttäjä voi avata pelialueen ruutuja, jonka seurauksena käyttäjä voi osua miinaan, tai avata ruudun, joka paljastaa viereisissä ruuduissa olevien miinojen määrän /tehty
 - Käyttäjä voi myös merkata avaamattomia ruutuja miinojen sijaintien muistamisen helpottamiseksi. /tehty
 
 ### Pelin jääkeinen loppunäkymä
 
-- Pelaaja näkee saavuttamansa tuloksen, ja voi valita uuden pelin tai palata alkuvalikkoon.
+- Pelaaja näkee saavuttamansa tuloksen, ja voi valita uuden pelin tai palata alkuvalikkoon. /tehty
 
 ### Parhaat tulokset -näkymä
 
-- Käyttäjä näkee 10 parasta tulosta kaikilta käyttäjiltä. Jokaisella vaikeusasteella on oma tulosnäkymänsä.  
+- Käyttäjä näkee 10 parasta tulosta kaikilta käyttäjiltä. Jokaisella vaikeusasteella on oma tulosnäkymänsä. /tehty
 
 ## Jatkokehitysideoita
 
-Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla:
+Perusversion jälkeen sovellusta voi täydentää ajan salliessa esim. seuraavilla toiminnallisuuksilla:
 
 - Miellyttävämpi graafinen toteutus
 - Mahdollisuus valita miinojen määrä ennen peliä ja/tai aikaraja jonka puitteissa peli on voitettava. 
+- Äänet pelin eri tapahtumille
+- Tila pelialueen yläpuolelle, josta näkee pelikellon sekä merkattujen miinojen määrän.

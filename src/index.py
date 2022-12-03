@@ -7,8 +7,8 @@ def main():
     window.title("Minesweeper")
     window.geometry("+550+250")
 
-    ui = UI(window)
-    ui.start()
+    ui_index = UI(window)
+    ui_index.start()
 
     window.mainloop()
 

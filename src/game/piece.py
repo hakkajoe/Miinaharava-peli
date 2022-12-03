@@ -1,36 +1,38 @@
 class Piece():
-    def __init__(self, HasBomb):
-        self._HasBomb = HasBomb
+    def __init__(self, has_bomb):
+        self._has_bomb = has_bomb
         self._clicked = False
         self._flagged = False
+        self._neighbors = None
+        self._num_around = None
 
-    def GetHasBomb(self):
-        return self._HasBomb
+    def get_has_bomb(self):
+        return self._has_bomb
 
-    def GetClicked(self):
+    def get_clicked(self):
         return self._clicked
 
-    def GetFlagged(self):
+    def get_flagged(self):
         return self._flagged
 
-    def SetNeighbors_piece(self, neighbors):
+    def set_neighbors_piece(self, neighbors):
         self._neighbors = neighbors
-        self.SetNumAround()
+        self.set_num_around()
 
-    def SetNumAround(self):
-        self._NumAround = 0
+    def set_num_around(self):
+        self._num_around = 0
         for piece in self._neighbors:
-            if piece.GetHasBomb():
-                self._NumAround += 1
+            if piece.get_has_bomb():
+                self._num_around += 1
 
-    def GetNumAround(self):
-        return self._NumAround
+    def get_num_around(self):
+        return self._num_around
 
-    def ToggleFlag(self):
+    def toggle_flag(self):
         self._flagged = not self._flagged
 
     def click(self):
         self._clicked = True
 
-    def GetNeighbors(self):
+    def get_neighbors(self):
         return self._neighbors

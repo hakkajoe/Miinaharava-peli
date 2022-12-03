@@ -11,8 +11,8 @@ class Game():
     def __init__(self, board, screensize):
         self._board = board
         self._screensize = screensize
-        self._piecesize = self._screensize[0] // self._board.GetSize(
-        )[1], self._screensize[1] // self._board.GetSize()[0]
+        self._piecesize = self._screensize[0] // self._board.get_size(
+        )[1], self._screensize[1] // self._board.get_size()[0]
         self._init = True
         self._load_images()
 
@@ -33,21 +33,21 @@ class Game():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     position = pygame.mouse.get_pos()
                     rightclick = pygame.mouse.get_pressed()[2]
-                    self.HandleClick_game(position, rightclick)
+                    self.handle_click_game(position, rightclick)
             self._draw()
             pygame.display.flip()
-            if self._board.GetWon():
+            if self._board.get_won():
                 self.won_info()
-            if self._board.GetLost():
+            if self._board.get_lost():
                 self.lost_info()
         pygame.quit()
 
     def _draw(self):
         top_left = (0, 0)
-        for row in range(self._board.GetSize()[0]):
-            for col in range(self._board.GetSize()[1]):
-                piece = self._board._GetPiece((row, col))
-                image = self._GetImage(piece)
+        for row in range(self._board.get_size()[0]):
+            for col in range(self._board.get_size()[1]):
+                piece = self._board._get_piece((row, col))
+                image = self._get_image(piece)
                 self._screen.blit(image, top_left)
                 top_left = top_left[0] + self._piecesize[0], top_left[1]
             top_left = 0, top_left[1] + self._piecesize[1]
@@ -62,27 +62,27 @@ class Game():
             image = pygame.transform.scale(image, self._piecesize)
             self._images[file.split(".")[0]] = image
 
-    def _GetImage(self, piece):
+    def _get_image(self, piece):
         string = None
-        if piece.GetClicked():
-            string = "bomb" if piece.GetHasBomb() else str(piece.GetNumAround())
+        if piece.get_clicked():
+            string = "bomb" if piece.get_has_bomb() else str(piece.get_num_around())
         else:
-            string = "flag" if piece.GetFlagged() else "empty_unclicked"
+            string = "flag" if piece.get_flagged() else "empty_unclicked"
         return self._images[string]
 
-    def HandleClick_game(self, position, rightclick):
+    def handle_click_game(self, position, rightclick):
         if self._init == False:
-            if self._board.GetLost():
+            if self._board.get_lost():
                 return
             index = position[1] // self._piecesize[1], position[0] // self._piecesize[0]
-            piece = self._board._GetPiece(index)
-            self._board.HandleClick_board(piece, rightclick)
+            piece = self._board._get_piece(index)
+            self._board.handle_click_board(piece, rightclick)
         elif self._init == True:
             index = position[1] // self._piecesize[1], position[0] // self._piecesize[0]
             self._init = False
-            self._board.SetBombs(index)
-            piece = self._board._GetPiece(index)
-            self._board.HandleClick_board(piece, rightclick)
+            self._board.set_bombs(index)
+            piece = self._board._get_piece(index)
+            self._board.handle_click_board(piece, rightclick)
 
     def won_info(self):
         sleep(2)

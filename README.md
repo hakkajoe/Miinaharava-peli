@@ -12,6 +12,8 @@
 
 - [Arkkitehtuuri](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+- [Release](https://github.com/hakkajoe/ot-harjoitusty-/releases/tag/viikko5)
+
 ### Asennus
 
 1. Asenna riippuvuudet komennolla:

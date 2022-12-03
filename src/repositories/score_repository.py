@@ -17,42 +17,30 @@ class ScoreRepository:
         cursor = self._connection.cursor()
 
         result = cursor.execute(
-            "select score, username, date from scores where diff = 'easy' order by score limit 10").fetchall()
-
-        list = []
-
-        for i in result:
-            list.append((i[0], i[1], i[2]))
-
-        return list
+            "select score, username, date from scores where diff = 'easy' order by score limit 10"
+            ).fetchall()
+        
+        return result
 
     def find_all_medium(self):
 
         cursor = self._connection.cursor()
 
         result = cursor.execute(
-            "select score, username, date from scores where diff = 'medium' order by score limit 10").fetchall()
+            "select score, username, date from scores where diff = 'medium' order by score limit 10"
+            ).fetchall()
 
-        list = []
-
-        for i in result:
-            list.append((i[0], i[1], i[2]))
-
-        return list
+        return result
 
     def find_all_hard(self):
 
         cursor = self._connection.cursor()
 
         result = cursor.execute(
-            "select score, username, date from scores where diff = 'hard' order by score limit 10").fetchall()
+            "select score, username, date from scores where diff = 'hard' order by score limit 10"
+            ).fetchall()
 
-        list = []
-
-        for i in result:
-            list.append((i[0], i[1], i[2]))
-
-        return list
+        return result
 
     def create(self, entry):
 
