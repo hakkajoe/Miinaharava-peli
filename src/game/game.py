@@ -29,22 +29,29 @@ class Game():
     def event_handler(self):
         return pygame.event.get()
 
-    def run(self):
+    def run(self, testevent=None, testpos=None):
         self._start_time = time()
         self._running = True
         while self._running:
-            for event in self.event_handler():
-                if event.type == pygame.QUIT:
-                    score = 0
-                    status = "lost"
-                    game_service.register_game_data(score, status)
-                    self._running = False
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    position = pygame.mouse.get_pos()
-                    rightclick = pygame.mouse.get_pressed()[2]
-                    self.handle_click_game(position, rightclick)
+            if testevent != None:
+                position = testpos
+                self._screen = False
+                rightclick = False
+                self.handle_click_game(position, rightclick)
+            else:
+                for event in self.event_handler():
+                    if event.type == pygame.QUIT:
+                        score = 0
+                        status = "lost"
+                        game_service.register_game_data(score, status)
+                        self._running = False
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        position = pygame.mouse.get_pos()
+                        rightclick = pygame.mouse.get_pressed()[2]
+                        self.handle_click_game(position, rightclick)
             self._draw()
-            pygame.display.flip()
+            if self._screen != False:
+                pygame.display.flip()
             if self._board.get_won():
                 self.won_info()
             if self._board.get_lost():
@@ -57,7 +64,8 @@ class Game():
             for col in range(self._board.get_size()[1]):
                 piece = self._board._get_piece((row, col))
                 image = self._get_image(piece)
-                self._screen.blit(image, top_left)
+                if self._screen != False:
+                    self._screen.blit(image, top_left)
                 top_left = top_left[0] + self._piecesize[0], top_left[1]
             top_left = 0, top_left[1] + self._piecesize[1]
 
@@ -99,15 +107,16 @@ class Game():
         score = round(end_time - self._start_time, 2)
         status = "won"
         game_service.register_game_data(score, status)
-        self._wontext1 = self._font.render(("Congratulations!"), True, (0, 0, 0))
-        self._wontext2 = self._font.render((f"you beat the game in"), True, (0, 0, 0))
-        self._wontext3 = self._font.render((f"{score} seconds!"), True, (0, 0, 0))
-        self._screen.fill((255, 255, 255))
-        self._screen.blit(self._wontext1, (self._screensize[0] // 2 - 80, self._screensize[1] // 2 - 30))
-        self._screen.blit(self._wontext2, (self._screensize[0] // 2 - 100, self._screensize[1] // 2))
-        self._screen.blit(self._wontext3, (self._screensize[0] // 2 - 80, self._screensize[1] // 2 + 30))
-        pygame.display.flip()
-        sleep(3)
+        if self._screen != False:
+            self._wontext1 = self._font.render(("Congratulations!"), True, (0, 0, 0))
+            self._wontext2 = self._font.render((f"you beat the game in"), True, (0, 0, 0))
+            self._wontext3 = self._font.render((f"{score} seconds!"), True, (0, 0, 0))
+            self._screen.fill((255, 255, 255))
+            self._screen.blit(self._wontext1, (self._screensize[0] // 2 - 80, self._screensize[1] // 2 - 30))
+            self._screen.blit(self._wontext2, (self._screensize[0] // 2 - 100, self._screensize[1] // 2))
+            self._screen.blit(self._wontext3, (self._screensize[0] // 2 - 80, self._screensize[1] // 2 + 30))
+            pygame.display.flip()
+            sleep(3)
         self._running = False
 
     def lost_info(self):

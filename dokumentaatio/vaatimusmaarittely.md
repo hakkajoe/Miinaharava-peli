@@ -49,3 +49,4 @@ Perusversion jälkeen sovellusta voi täydentää ajan salliessa esim. seuraavil
 - Mahdollisuus valita miinojen määrä ennen peliä ja/tai aikaraja jonka puitteissa peli on voitettava. 
 - Äänet pelin eri tapahtumille
 - Tila pelialueen yläpuolelle, josta näkee pelikellon sekä merkattujen miinojen määrän.
+- Paremmin toteutettu rakenne pelille, jotta koodia olisi helpompaa testata/muokata

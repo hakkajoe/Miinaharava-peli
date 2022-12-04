@@ -13,6 +13,9 @@ class Board:
         elif diff == "hard":
             self._size = (24, 24)
             self._bombs = 100
+        elif diff == "test":
+            self._size = (10, 10)
+            self._bombs = 0
         self._lost = False
         self._won = False
         self._num_clicked = 0

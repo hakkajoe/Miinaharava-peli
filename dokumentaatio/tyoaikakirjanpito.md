@@ -14,5 +14,5 @@
 |30.11.|5t|Tein uuden loppunäkymän pygamen ikkunaan ja poistin alkuperäisen tkinter-loppunäkymän. Määritin myös pommien distribuution pelin vaikeusasteen mukaan.|
 |1.12.|2t|Muutin koodia siten, että pelin ensimmäisellä siirrolla ei ole mahdollista osua pommiin.|
 |3.12.|2t|Loin sekvenssikaavion tuloksen tallentamisesta, ja siivosin jonkin verran pylint-virheitä|
-|4.12.|4t|Nostin testikattavuuden 50 prosenttiin, ja jäin miettimään tulisiko tkinter ja pygame käyttöliittymät sisällyttää kattavuusraporttiin vai ei|
-|**4.12.**|**54t**|**Tunteja yhteensä**|
+|4.12.|6t|Nostin testikattavuuden 70 prosenttiin|
+|**4.12.**|**56t**|**Tunteja yhteensä**|
