@@ -15,6 +15,9 @@ class UI:
     def start(self):
         self._show_login_view()
 
+    def get_current_view(self):
+        return self._current_view
+
     def _hide_current_view(self):
         if self._current_view:
             self._current_view.destroy()
