@@ -16,15 +16,24 @@ class Game():
         self._init = True
         self._load_images()
 
-    def run(self):
-        pygame.display.set_caption('Minesweeper')
+    def start(self):
         pygame.init()
+        pygame.display.set_caption('Minesweeper')
         self._font = pygame.font.SysFont("Arial", 20)
-        self._start_time = time()
         self._screen = pygame.display.set_mode(self._screensize)
+        self.run()
+
+    def end(self):
+        pygame.quit()
+
+    def event_handler(self):
+        return pygame.event.get()
+
+    def run(self):
+        self._start_time = time()
         self._running = True
         while self._running:
-            for event in pygame.event.get():
+            for event in self.event_handler():
                 if event.type == pygame.QUIT:
                     score = 0
                     status = "lost"
@@ -40,7 +49,7 @@ class Game():
                 self.won_info()
             if self._board.get_lost():
                 self.lost_info()
-        pygame.quit()
+        self.end()
 
     def _draw(self):
         top_left = (0, 0)

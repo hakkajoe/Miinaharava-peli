@@ -25,7 +25,7 @@ class PlayView:
         self._screensize = (300, 300)
         self._board = Board(self._diff)
         self._game = Game(self._board, self._screensize)
-        self._game.run()
+        self._game.start()
 
     def _initiate_medium(self):
         self._diff = "medium"
@@ -33,7 +33,7 @@ class PlayView:
         self._screensize = (540, 540)
         self._board = Board(self._diff)
         self._game = Game(self._board, self._screensize)
-        self._game.run()
+        self._game.start()
 
     def _initiate_hard(self):
         self._diff = "hard"
@@ -41,7 +41,7 @@ class PlayView:
         self._screensize = (720, 720)
         self._board = Board(self._diff)
         self._game = Game(self._board, self._screensize)
-        self._game.run()
+        self._game.start()
 
     def _suspend(self):
         self._show_end_view
