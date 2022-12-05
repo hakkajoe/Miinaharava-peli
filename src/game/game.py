@@ -8,7 +8,15 @@ from services.game_service import game_service
 
 
 class Game():
+    """acts as an index for handling events in game
+    """
     def __init__(self, board, screensize):
+        """sets up game
+
+        Args:
+            board: contains info on board size and asset coordinates
+            screensize: screensize
+        """
         self._board = board
         self._screensize = screensize
         self._piecesize = self._screensize[0] // self._board.get_size(
@@ -17,6 +25,8 @@ class Game():
         self._load_images()
 
     def start(self):
+        """runs pygame window
+        """
         pygame.init()
         pygame.display.set_caption('Minesweeper')
         self._font = pygame.font.SysFont("Arial", 20)
@@ -24,12 +34,25 @@ class Game():
         self.run()
 
     def end(self):
+        """closes pygame window
+        """
         pygame.quit()
 
     def event_handler(self):
+        """gets user input
+
+        Returns:
+            pygame event: action imposed by player
+        """
         return pygame.event.get()
 
     def run(self, testevent=None, testpos=None):
+        """contains game loop
+
+        Args:
+            testevent (optional): event used for testing purposes
+            testpos (optional): mouse coordinates used for testing purposes.
+        """
         self._start_time = time()
         self._running = True
         while self._running:
@@ -59,6 +82,8 @@ class Game():
         self.end()
 
     def _draw(self):
+        """updates the pygame view during the course of the game
+        """
         top_left = (0, 0)
         for row in range(self._board.get_size()[0]):
             for col in range(self._board.get_size()[1]):
@@ -70,6 +95,8 @@ class Game():
             top_left = 0, top_left[1] + self._piecesize[1]
 
     def _load_images(self):
+        """retrieves images used in the game
+        """
         self._images = {}
         dirname = os.path.dirname(__file__)
         for file in os.listdir(f"{dirname}/assets"):
@@ -80,6 +107,14 @@ class Game():
             self._images[file.split(".")[0]] = image
 
     def _get_image(self, piece):
+        """fetches correct image in accordance with board coordinates
+
+        Args:
+            piece: image assigned to click location
+
+        Returns:
+            dict: image file that corresponds with key name
+        """
         string = None
         if piece.get_clicked():
             string = "bomb" if piece.get_has_bomb() else str(piece.get_num_around())
@@ -88,6 +123,12 @@ class Game():
         return self._images[string]
 
     def handle_click_game(self, position, rightclick):
+        """sets up events that result from clicking game board
+
+        Args:
+            position: click coordinates
+            rightclick: boolean value of whether right-side click was made
+        """
         if self._init == False:
             if self._board.get_lost():
                 return
@@ -102,6 +143,8 @@ class Game():
             self._board.handle_click_board(piece, rightclick)
 
     def won_info(self):
+        """handles events for when player wins game
+        """
         sleep(2)
         end_time = time()
         score = round(end_time - self._start_time, 2)
@@ -120,6 +163,8 @@ class Game():
         self._running = False
 
     def lost_info(self):
+        """handles events for when player loses game
+        """
         sleep(2)
         score = 0
         status = "lost"

@@ -5,6 +5,8 @@ from game.board import Board
 
 
 class PlayView:
+    """handles actions in the playview user interface
+    """
     def __init__(self, root, show_mainmenu_view):
         self._root = root
         self._show_mainmenu_view = show_mainmenu_view
@@ -14,12 +16,18 @@ class PlayView:
         self._start()
 
     def pack(self):
+        """packs root info
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """ends current view
+        """
         self._frame.destroy()
 
     def _initiate_easy(self):
+        """sets up easy game
+        """
         self._diff = "easy"
         game_service.update_game_data(self._diff)
         self._screensize = (300, 300)
@@ -28,6 +36,8 @@ class PlayView:
         self._game.start()
 
     def _initiate_medium(self):
+        """sets up medium game
+        """
         self._diff = "medium"
         game_service.update_game_data(self._diff)
         self._screensize = (540, 540)
@@ -36,6 +46,8 @@ class PlayView:
         self._game.start()
 
     def _initiate_hard(self):
+        """sets up hard game
+        """
         self._diff = "hard"
         game_service.update_game_data(self._diff)
         self._screensize = (720, 720)
@@ -43,10 +55,9 @@ class PlayView:
         self._game = Game(self._board, self._screensize)
         self._game.start()
 
-    def _suspend(self):
-        self._show_end_view
-
     def _start(self):
+        """shows interface
+        """
         self._frame = ttk.Frame(master=self._root)
 
         self.label = ttk.Label(master=self._frame, text="Choose game difficulty to start a game:")

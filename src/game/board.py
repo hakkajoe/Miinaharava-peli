@@ -3,7 +3,14 @@ from game.piece import Piece
 
 
 class Board:
+    """handles actions related to setting up and receiving info from game board
+    """
     def __init__(self, diff):
+        """sets up board
+
+        Args:
+            diff: game difficulty
+        """
         if diff == "easy":
             self._size = (10, 10)
             self._bombs = 10
@@ -23,6 +30,8 @@ class Board:
         self.set_init_board()
 
     def set_init_board(self):
+        """sets up inital board where clicking on a bomb is impossible
+        """
         self._board = []
         for row in range(self._size[0]):
             row = []
@@ -34,6 +43,8 @@ class Board:
             self._board.append(row)
 
     def set_board(self):
+        """sets up board with bombs after first click is made
+        """
         self._num_non_bombs = 0
         self._board = []
         for row in range(self._size[0]):
@@ -51,6 +62,11 @@ class Board:
         self._set_neighbors_board()
 
     def set_bombs(self, startbox):
+        """sets coordinates of bombs on board
+
+        Args:
+            startbox: contains the coordinates of initial click location, where bombs cannot be placed
+        """
         self._bomb_coordinates = []
         to_be_placed = self._bombs
         while True:
@@ -70,6 +86,8 @@ class Board:
         self.set_board()
 
     def _set_neighbors_board(self):
+        """sets info of non-bomb squares on game board
+        """
         for row in range(self._size[0]):
             for col in range(self._size[1]):
                 piece = self._get_piece((row, col))
@@ -77,12 +95,33 @@ class Board:
                 piece.set_neighbors_piece(neighbors)
 
     def get_size(self):
+        """gets size of game area
+
+        Returns:
+            tuple, game size
+        """
         return self._size
 
     def _get_piece(self, index):
+        """gets info regarding what tile of coordinates contain
+
+        Args:
+            index: board coordinates
+
+        Returns:
+            Bool, bomb info
+        """
         return self._board[index[0]][index[1]]
 
     def _get_list_of_neighbors(self, index):
+        """gets info of neighboring tiles per tile
+
+        Args:
+            index: tile coordinates
+
+        Returns:
+            list: info of neighboring tiles
+        """
         neighbors = []
         for row in range(index[0] - 1, index[0] + 2):
             for col in range(index[1] - 1, index[1] + 2):
@@ -94,6 +133,12 @@ class Board:
         return neighbors
 
     def handle_click_board(self, piece, flag):
+        """handles the click information given in game, and changes tile board and/or tile data accordingly
+
+        Args:
+            piece: tile info
+            flag: if true, toggle flag, if false, ignore
+        """
         if piece.get_clicked() or not flag and piece.get_flagged():
             return
         if flag:
@@ -111,7 +156,17 @@ class Board:
                 self.handle_click_board(neighbor, False)
 
     def get_lost(self):
+        """gets status of lose state
+
+        Returns:
+            Bool, lost or not lost
+        """
         return self._lost
 
     def get_won(self):
+        """gets status of win state
+
+        Returns:
+            Bool, true if all non-bomb tiles are clicked
+        """
         return self._num_non_bombs == self._num_clicked

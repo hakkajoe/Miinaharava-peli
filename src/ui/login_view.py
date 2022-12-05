@@ -3,7 +3,16 @@ from services.login_service import login_service, InvalidCredentialsError
 
 
 class LoginView:
+    """handles actions in the login user interface
+    """
     def __init__(self, root, handle_login, show_createuser_view):
+        """sets up interface
+
+        Args:
+            root: tkinter info
+            handle_login: info needed for showing main menu view
+            show_createuser_view_ info needed for showing view for creating user
+        """
         self._root = root
         self._handle_login = handle_login
         self._show_createuser_view = show_createuser_view
@@ -16,12 +25,18 @@ class LoginView:
         self._start()
 
     def pack(self):
+        """packs root info
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """ends current view
+        """
         self._frame.destroy()
 
     def _login_handler(self):
+        """handles log in info and contacts login service
+        """
         username = self._username_entry.get()
         password = self._password_entry.get()
 
@@ -32,13 +47,22 @@ class LoginView:
             self._show_error("! Invalid username or password !")
 
     def _show_error(self, message):
+        """sets up error message if wrong log in credentials are used
+
+        Args:
+            message: error message
+        """
         self._error_variable.set(message)
         self._error_label.grid()
 
     def _hide_error(self):
+        """handles hiding error message
+        """
         self._error_label.grid_remove()
 
     def _start(self):
+        """shows interface
+        """
         self._frame = ttk.Frame(master=self._root)
 
         self._error_variable = StringVar(self._frame)

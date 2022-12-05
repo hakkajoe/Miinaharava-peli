@@ -15,4 +15,5 @@
 |1.12.|2t|Muutin koodia siten, että pelin ensimmäisellä siirrolla ei ole mahdollista osua pommiin.|
 |3.12.|2t|Loin sekvenssikaavion tuloksen tallentamisesta, ja siivosin jonkin verran pylint-virheitä|
 |4.12.|6t|Nostin testikattavuuden 70 prosenttiin|
-|**4.12.**|**56t**|**Tunteja yhteensä**|
+|5.12.|3t|Kirjasin noin puolet docstring dokumentaatiosta|
+|**5.12.**|**59t**|**Tunteja yhteensä**|

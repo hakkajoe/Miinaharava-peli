@@ -3,6 +3,8 @@ from ui.ui import UI
 
 
 def main():
+    """sets up tkinter window
+    """
     window = Tk()
     window.title("Minesweeper")
     window.geometry("+550+250")

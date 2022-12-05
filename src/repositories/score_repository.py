@@ -1,18 +1,25 @@
 from entities.highscores import Highscore
 from database_connection import get_database_connection
 
-
-def get_score_by_row(row):
-    return Highscore(row["score"], row["username"], row["date"], row["diff"]) if row else None
-
-
 class ScoreRepository:
+    """manages score data between score_service file and database file
+    """
 
     def __init__(self, connection):
+        """sets up connection to database
+
+        Args:
+            connection: database connection
+        """
 
         self._connection = connection
 
     def find_all_easy(self):
+        """gets 10 top easy scores from database
+
+        Returns:
+            list, top 10 easy scores
+        """
 
         cursor = self._connection.cursor()
 
@@ -23,6 +30,11 @@ class ScoreRepository:
         return result
 
     def find_all_medium(self):
+        """gets 10 top medium scores from database
+
+        Returns:
+            list, top 10 medium scores
+        """
 
         cursor = self._connection.cursor()
 
@@ -33,6 +45,11 @@ class ScoreRepository:
         return result
 
     def find_all_hard(self):
+        """gets 10 top hard scores from database
+
+        Returns:
+            list, top 10 hard scores
+        """
 
         cursor = self._connection.cursor()
 
@@ -43,6 +60,11 @@ class ScoreRepository:
         return result
 
     def create(self, entry):
+        """creates a new score entry to score database
+
+        Args:
+            entry (Highscore): contains all info of Highscore entry
+        """
 
         cursor = self._connection.cursor()
 
@@ -54,6 +76,8 @@ class ScoreRepository:
         self._connection.commit()
 
     def delete_all(self):
+        """removes all entries from score database
+        """
 
         cursor = self._connection.cursor()
 
