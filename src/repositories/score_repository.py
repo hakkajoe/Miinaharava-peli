@@ -14,49 +14,22 @@ class ScoreRepository:
 
         self._connection = connection
 
-    def find_all_easy(self):
-        """gets 10 top easy scores from database
+    def find_all(self, diff):
+        """gets 10 top scores from database
+
+        Args:
+            diff: difficulty of scores fetched
 
         Returns:
-            list, top 10 easy scores
+            list, top 10 scores of given difficulty
         """
 
         cursor = self._connection.cursor()
 
         result = cursor.execute(
-            "select score, username, date from scores where diff = 'easy' order by score limit 10"
+            f"select score, username, date from scores where diff = '{diff}' order by score limit 10"
             ).fetchall()
         
-        return result
-
-    def find_all_medium(self):
-        """gets 10 top medium scores from database
-
-        Returns:
-            list, top 10 medium scores
-        """
-
-        cursor = self._connection.cursor()
-
-        result = cursor.execute(
-            "select score, username, date from scores where diff = 'medium' order by score limit 10"
-            ).fetchall()
-
-        return result
-
-    def find_all_hard(self):
-        """gets 10 top hard scores from database
-
-        Returns:
-            list, top 10 hard scores
-        """
-
-        cursor = self._connection.cursor()
-
-        result = cursor.execute(
-            "select score, username, date from scores where diff = 'hard' order by score limit 10"
-            ).fetchall()
-
         return result
 
     def create(self, entry):

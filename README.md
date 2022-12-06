@@ -4,15 +4,19 @@
 
 ### Dokumentaatio
 
-- [Vaatimusmaarittely](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/vaatimusmaarittely.md)
+- [Käyttöohje]((https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/kayttohje.md)
 
-- [Tyoaikakirjanpito](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+- [Vaatimusmäärittely](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/vaatimusmaarittely.md)
+
+- [Työaikakirjanpito](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 - [Changelog](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/changelog.md)
 
 - [Arkkitehtuuri](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-- [Release](https://github.com/hakkajoe/ot-harjoitusty-/releases/tag/viikko5)
+- [Testausdokumentti](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/testausdokumenttii.md)
+
+- [Release](https://github.com/hakkajoe/ot-harjoitusty-/releases/tag/dec6)
 
 ### Asennus
 
@@ -67,3 +71,7 @@ Tiedoston [.pylintrc](./.pylintrc) määrittelemät tarkistukset voi suorittaa k
 ```bash
 poetry run invoke lint
 ```
+
+### Lähteet
+
+Miinaharava-pelssä käytettävät kuvat ovat lainattu Wikimedia Commons -sivustolta (https://commons.wikimedia.org/wiki/)

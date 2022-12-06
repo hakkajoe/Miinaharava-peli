@@ -23,7 +23,7 @@ class TestGame(unittest.TestCase):
     def test_can_complete_game(self):
         self._game.run(pygame.MOUSEBUTTONDOWN, (100, 100))
         self.assertTrue(self._board.get_won())
-        scores = score_repository.find_all_easy()
+        scores = score_repository.find_all("easy")
         self.assertEqual(len(scores), 1)
         self.assertEqual(scores[0][1], self.user_1.username)
         score_repository.delete_all()

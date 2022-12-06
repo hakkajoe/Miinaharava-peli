@@ -3,8 +3,17 @@ from services.login_service import login_service
 
 
 class MainmenuView:
+    """handles actions in the create user interface
+    """
     def __init__(self, root, show_login_view, show_highscore_view_easy, show_play_view):
+        """sets up interface
 
+        Args:
+            root: tkinter info
+            show_login_view: info needed for showing login view
+            show_highscore_view_easy: info needed for showing initial highscore view
+            show_play_view: info needed for showing play view
+        """
         self._root = root
         self._frame = None
         self._show_login_view = show_login_view
@@ -15,12 +24,18 @@ class MainmenuView:
         self._start()
 
     def pack(self):
+        """packs root info
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """ends current view
+        """
         self._frame.destroy()
 
     def _start(self):
+        """shows interface
+        """
         self._frame = ttk.Frame(master=self._root)
 
         name = self._user.username

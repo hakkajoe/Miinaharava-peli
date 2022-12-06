@@ -4,24 +4,39 @@ from tkinter import constants, ttk
 
 
 class HighscoresViewHard:
+    """handles actions in the hard highscore view interface
+    """
     def __init__(self, root, show_mainmenu_view, show_easyscores_view, show_mediumscores_view):
+        """sets up interface
 
+        Args:
+            root: contains tkinter info
+            show_mainmenu_view: info needed for showing main menu view
+            show_mediumscores_view: info needed for showing medium highscore view
+            show_hardscores_view: info needed for showing hard highscore view
+        """
         self._root = root
         self._frame = None
         self._show_mainmenu_view = show_mainmenu_view
         self._show_mediumscores_view = show_mediumscores_view
         self._show_easyscores_view = show_easyscores_view
-        self._scores = score_service.get_scores_hard()
+        self._scores = score_service.get_scores("hard")
 
         self._start()
 
     def pack(self):
+        """packs root info
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """ends current view
+        """
         self._frame.destroy()
 
     def _start(self):
+        """shows interface
+        """
         self._frame = ttk.Frame(master=self._root)
         self.button1 = ttk.Button(
             master=self._frame, text="Scores (easy)", command=self._show_easyscores_view)

@@ -12,7 +12,7 @@ class TestHighscoreRepository(unittest.TestCase):
 
     def test_create(self):
         score_repository.create(self.score_1)
-        scores = score_repository.find_all_easy()
+        scores = score_repository.find_all("easy")
 
         self.assertEqual(len(scores), 1)
         self.assertEqual(scores[0][1], self.score_1.username)
@@ -22,7 +22,7 @@ class TestHighscoreRepository(unittest.TestCase):
         score_repository.create(self.score_1)
         score_repository.create(self.score_2)
         score_repository.create(self.score_3)
-        scores = score_repository.find_all_easy()
+        scores = score_repository.find_all("easy")
 
         self.assertEqual(len(scores), 1)
         self.assertEqual(scores[0][0], self.score_1.score)
@@ -32,7 +32,7 @@ class TestHighscoreRepository(unittest.TestCase):
         score_repository.create(self.score_1)
         score_repository.create(self.score_2)
         score_repository.create(self.score_3)
-        scores = score_repository.find_all_medium()
+        scores = score_repository.find_all("medium")
 
         self.assertEqual(len(scores), 2)
         self.assertEqual(scores[0][0], self.score_3.score)
@@ -43,7 +43,7 @@ class TestHighscoreRepository(unittest.TestCase):
         score_repository.create(self.score_1)
         score_repository.create(self.score_2)
         score_repository.create(self.score_3)
-        scores = score_repository.find_all_hard()
+        scores = score_repository.find_all("hard")
 
         self.assertEqual(len(scores), 0)
         score_repository.delete_all()

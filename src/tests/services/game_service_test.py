@@ -22,7 +22,7 @@ class TestGameService(unittest.TestCase):
         login_service.login(self.user_1.username, self.user_1.password)
         game_service.update_game_data("easy")
         game_service.register_game_data(100, "won")
-        data = score_service.get_scores_easy()
+        data = score_service.get_scores("easy")
         self.assertEqual(data[0][0], 100)
         score_repository.delete_all()
 
@@ -33,6 +33,6 @@ class TestGameService(unittest.TestCase):
         login_service.login(self.user_1.username, self.user_1.password)
         game_service.update_game_data("medium")
         game_service.register_game_data(0, "lost")
-        data = score_service.get_scores_medium()
+        data = score_service.get_scores("medium")
         self.assertEqual(len(data), 0)
         score_repository.delete_all()

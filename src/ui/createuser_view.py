@@ -3,9 +3,16 @@ from services.login_service import login_service, UsernameExistsError
 
 
 class CreateuserView:
-
+    """handles actions in the create user interface
+    """
     def __init__(self, root, handle_create_user, show_login_view):
+        """sets up interface
 
+        Args:
+            root: tkinter info
+            handle_create_user: info needed for showing main menu view
+            show_login_view info needed for showing login view
+        """
         self._root = root
         self._handle_create_user = handle_create_user
         self._show_login_view = show_login_view
@@ -18,12 +25,18 @@ class CreateuserView:
         self._initialize()
 
     def pack(self):
+        """packs root info
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """ends current view
+        """
         self._frame.destroy()
 
     def _create_user_handler(self):
+        """handles info needed for user creation and contacts login service
+        """
         username = self._username_entry.get()
         password = self._password_entry.get()
 
@@ -42,13 +55,22 @@ class CreateuserView:
             self._show_error(f"Username {username} already exists")
 
     def _show_error(self, message):
+        """sets up error message if wrong log in credentials are used
+
+        Args:
+            message: error message
+        """
         self._error_variable.set(message)
         self._error_label.grid()
 
     def _hide_error(self):
+        """handles hiding error message
+        """
         self._error_label.grid_remove()
 
     def _initialize(self):
+        """shows interface
+        """
         self._frame = ttk.Frame(master=self._root)
 
         self._error_variable = StringVar(self._frame)
