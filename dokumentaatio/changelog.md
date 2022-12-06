@@ -15,3 +15,8 @@
 - Pygame-ikkuna toimii tkinterin kanssa, ja tiedot siirtyvät oikein pygamen ja tkinterin välillä
 - Pelissä on oikea määrä pommeja suhteessa vaikeusasteeseen, ja ensimmäinen klikkaus ei voi osua enää pommiin
 - Sovellus on valmis siltä osin, mitä on mainittu vaatimusmäärittelyssä
+
+## Viikko 6
+
+- Sovellukseen vaadittu dokumentaatio on valmiina
+- Testikattavuus on yli 70%

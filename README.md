@@ -4,7 +4,7 @@
 
 ### Dokumentaatio
 
-- [Käyttöohje]((https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/kayttohje.md)
+- [Käyttöohje](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/kayttohje.md)
 
 - [Vaatimusmäärittely](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
@@ -14,7 +14,7 @@
 
 - [Arkkitehtuuri](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-- [Testausdokumentti](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/testausdokumenttii.md)
+- [Testausdokumentti](https://github.com/hakkajoe/ot-harjoitusty-/blob/master/dokumentaatio/testausdokumentti.md)
 
 - [Release](https://github.com/hakkajoe/ot-harjoitusty-/releases/tag/dec6)
 

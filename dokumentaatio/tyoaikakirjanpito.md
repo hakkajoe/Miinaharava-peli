@@ -16,4 +16,5 @@
 |3.12.|2t|Loin sekvenssikaavion tuloksen tallentamisesta, ja siivosin jonkin verran pylint-virheitä|
 |4.12.|6t|Nostin testikattavuuden 70 prosenttiin|
 |5.12.|3t|Kirjasin noin puolet docstring dokumentaatiosta|
-|**5.12.**|**59t**|**Tunteja yhteensä**|
+|6.12.|5t|Viimeistelin docstring-dokumentaation, kirjoitin arkkitehtuuri- testaus- ja käyttohjedokumentit, ja hioin koodia joiltakin osin paremmaksi|
+|**6.12.**|**64t**|**Tunteja yhteensä**|
